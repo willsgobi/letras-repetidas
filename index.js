@@ -59,6 +59,7 @@ function showName() {
         var t = document.createTextNode("Não há letras repetidas!")
         para.appendChild(t); 
         document.getElementById("result").appendChild(para);
+        document.querySelector("#limpar").classList.remove('hidden')
     }
 
     console.log("")
