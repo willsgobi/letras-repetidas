@@ -4,11 +4,12 @@
 
 //showName(nome)
 
+document.addEventListener('readystatechange', () => {
+    document.querySelector("#limpar").classList.add('hidden')
+})
+
 function showName() {
-    var list = document.getElementById("result"); 
-    while (list.hasChildNodes()) {
-        list.removeChild(list.lastChild);
-    } 
+    limparDados()
 
     const nome = document.querySelector("#nome").value;
 
@@ -52,7 +53,13 @@ function showName() {
             var t = document.createTextNode(`letra ${arr[k].letra}: ${arr[k].qtd} vezes`)
             para.appendChild(t); 
             document.getElementById("result").appendChild(para);
+            document.querySelector("#limpar").classList.remove('hidden')
         }
+
+        // var para = document.createElement("button");
+        // para.addEventListener('click', limparDados())
+        // para.value = "Limpar"
+        // document.getElementById("result").appendChild(para)
     } else {
         console.log("Não há letras repetidas!")
         var para = document.createElement("P");
@@ -65,3 +72,10 @@ function showName() {
     console.log("")
 };
 
+function limparDados(){
+    var list = document.getElementById("result"); 
+    while (list.hasChildNodes()) {
+        list.removeChild(list.lastChild);
+    } 
+    document.querySelector("#limpar").classList.add('hidden')
+}

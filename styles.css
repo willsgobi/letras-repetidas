@@ -27,6 +27,8 @@ body{
     justify-content: center;
     margin: 0 auto;
     flex-direction: column;
+
+    
 }
 
 .content > form {
@@ -59,7 +61,7 @@ body{
     background: rgb(56, 56, 56);
     color: white;
     font-size: 20px;
-    width: 300px;
+    width: 100%;
     cursor: pointer;
     border-radius: 5px;
     border: 2px solid transparent;
@@ -88,4 +90,27 @@ body{
     font-size: 20px;
     font-weight: bold;
     margin-top: 15px;
+}
+
+.hidden{
+    display: none;
+}
+
+#limpar {
+    font-size: 10px;
+    margin: 10px 0;
+    padding-right: 30%;
+    text-align: right;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .content > form {
+        width: 80%;
+    }
+
+    #limpar{
+        padding-right: 20%;
+    }
 }
