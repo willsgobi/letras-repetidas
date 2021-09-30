@@ -1,9 +1,3 @@
-// const prompt = require('prompt-sync')()
-
-// var name = prompt("Qual é o seu nome? ");
-
-//showName(nome)
-
 document.addEventListener('readystatechange', () => {
     document.querySelector("#limpar").classList.add('hidden')
 })
@@ -11,7 +5,8 @@ document.addEventListener('readystatechange', () => {
 function showName() {
     limparDados()
 
-    const nome = document.querySelector("#nome").value;
+    var nome = document.querySelector("#nome").value;
+    nome = nome.toString().toLowerCase();
 
     let arr = [];
 
@@ -57,11 +52,6 @@ function showName() {
             document.getElementById("result").appendChild(para);
             document.querySelector("#limpar").classList.remove('hidden')
         }
-
-        // var para = document.createElement("button");
-        // para.addEventListener('click', limparDados())
-        // para.value = "Limpar"
-        // document.getElementById("result").appendChild(para)
     } else {
         console.log("Não há letras repetidas!")
         var para = document.createElement("P");
