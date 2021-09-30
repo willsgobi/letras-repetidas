@@ -41,9 +41,11 @@ function showName() {
         }
     }
     console.log("")
-    if(arr.length > 0) {
-        
 
+    document.querySelector("#nomeVerificado").classList.remove('hidden')
+    document.querySelector('#nomeVerificado').innerText = `Nome analisado: ${nome}`
+
+    if(arr.length > 0) {
         console.log("As letras repetidas são: ")
         console.log("")
         for(let k = 0; k < arr.length; k++){
@@ -70,6 +72,7 @@ function showName() {
     }
 
     console.log("")
+    document.querySelector("#nome").value = "";
 };
 
 function limparDados(){
@@ -78,4 +81,5 @@ function limparDados(){
         list.removeChild(list.lastChild);
     } 
     document.querySelector("#limpar").classList.add('hidden')
+    document.querySelector("#nomeVerificado").classList.add('hidden')
 }
